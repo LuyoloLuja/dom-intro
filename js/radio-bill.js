@@ -28,7 +28,6 @@ function radioBill(){
     var totalCost = callsTotalTwo + smsTotalTwo;
     totalElement.innerHTML = totalCost.toFixed(2);
 
-
     billTotalSpanElement.classList.remove("danger");
     billTotalSpanElement.classList.remove("warning");
     if (totalCost >= 50){
