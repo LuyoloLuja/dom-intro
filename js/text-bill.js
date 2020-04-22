@@ -33,7 +33,6 @@ function textBillTotal(){
     billTotalSpanElement.classList.remove("danger");
     billTotalSpanElement.classList.remove("warning");
     if (totalCost >= 50){
-        // adding the danger class will make the text red
         totalElement.classList.add("danger");
     }
     else if (totalCost >= 30){
