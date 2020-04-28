@@ -36,14 +36,12 @@ updateButton.addEventListener('click', settingsBill);
 function radioSettings(){
     var checkedBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
 
-    if(checkedBtn){
         var billItemTypeWithSettings = checkedBtn.value;
         if (billItemTypeWithSettings === "call"){
             callTotalThree += callCostValue;
         }else if(billItemTypeWithSettings === "sms"){
             smsTotalThree += smsCostValue;
         }
-    }
 
     callElement.innerHTML = callTotalThree.toFixed(2);
     smsElement.innerHTML = smsTotalThree.toFixed(2);
@@ -64,5 +62,6 @@ function totalColor(totalBillCost){
         total.classList.add("warning");
     }else if(totalBillCost >= criticalLevel){
         total.classList.add("danger");
+        totalBillCost.preventDefault();
     }
 }

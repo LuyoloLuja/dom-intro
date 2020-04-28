@@ -5,10 +5,10 @@ const textBoxElement = document.querySelector(".billTypeText");
 const addButtonElement = document.querySelector(".addToBillBtn");
 
 //create a variable that will keep track of the total bill
-var totalElement = document.querySelector(".totalOne");
+var totalElementOne = document.querySelector(".totalOne");
 
 var callsTotalElement = document.querySelector(".callTotalOne");
-var smsTotalElement = document.querySelector(".smsTotalOne");
+var smsTotalElementTwo = document.querySelector(".smsTotalOne");
 var callsTotal = 0;
 var smsTotal = 0;
 
@@ -26,17 +26,17 @@ function textBillTotal(){
     }
     // update totals displayed on screen
     callsTotalElement.innerHTML = callsTotal.toFixed(2);
-    smsTotalElement.innerHTML = smsTotal.toFixed(2);
-    var totalCost = callsTotal + smsTotal;
-    totalElement.innerHTML = totalCost.toFixed(2);
+    smsTotalElementTwo.innerHTML = smsTotal.toFixed(2);
+    var allTotalCost = callsTotal + smsTotal;
+    totalElementOne.innerHTML = allTotalCost.toFixed(2);
 
     billTotalSpanElement.classList.remove("danger");
     billTotalSpanElement.classList.remove("warning");
-    if (totalCost >= 50){
-        totalElement.classList.add("danger");
+    if (allTotalCost >= 30 && allTotalCost < 50){
+        totalElementOne.classList.add("warning");
     }
-    else if (totalCost >= 30){
-        totalElement.classList.add("warning");
+    else if (allTotalCost >= 50){
+        totalElementOne.classList.add("danger");
     }
 }
 //add an event listener for when the add button is pressed
