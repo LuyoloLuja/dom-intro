@@ -62,18 +62,18 @@ function totalColor(totalBillCost){
         total.classList.add("warning");
     }else if(totalBillCost >= criticalLevel){
         total.classList.add("danger");
+        addButton.removeEventListener("click", radioSettings);
     }
     
     // prevent calls from being added when criticalLevel is exceeded
-    if(totalBillCost >= criticalLevel){
-        // callTotalThree = undefined;
-        // smsTotalThree = undefined;
-        // totalBillCost = undefined;
-        addButton.removeEventListener("click", radioSettings);
+    // if(totalBillCost >= criticalLevel){
+         // callTotalThree = undefined;
+         // smsTotalThree = undefined;
+         // totalBillCost = undefined;
 
-        // // preventing undefined from returning NaN after criticalLevel is reached
+         // // preventing undefined from returning NaN after criticalLevel is reached
         // callTotalThree = callTotalThree || 0;
         // smsTotalThree = callTotalThree || 0;
         // totalBillCost = totalBillCost || 0;
-    }
+    // }
 }
