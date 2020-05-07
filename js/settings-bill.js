@@ -29,6 +29,8 @@ function settingsBill(){
     smsCostValue = Number(smsCostElement.value);
     warningLevel = Number(warningSettings.value);
     criticalLevel = Number(criticalSettings.value);
+
+    totalColor();
 }
 updateButton.addEventListener('click', settingsBill);
 
@@ -64,6 +66,10 @@ function totalColor(totalBillCost){
         total.classList.add("danger");
         addButton.removeEventListener("click", radioSettings);
     }
+
+    // if(updateButton.clicked = true){
+    //     addButton.addEventListener('click', radioSettings);
+    // }
     
     // prevent calls from being added when criticalLevel is exceeded
     // if(totalBillCost >= criticalLevel){
