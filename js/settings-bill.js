@@ -69,6 +69,7 @@ function totalColor(totalBillCost){
         callTotalThree = undefined;
         smsTotalThree = undefined;
         totalBillCost = undefined;
+        addButton.removeEventListener("click", radioSettings);
 
         // preventing undefined from returning NaN after criticalLevel is reached
         callTotalThree = callTotalThree || 0;
