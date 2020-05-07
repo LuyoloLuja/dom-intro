@@ -37,17 +37,17 @@ function radioSettings(){
     var checkedBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
 
         var billItemTypeWithSettings = checkedBtn.value;
-        if (billItemTypeWithSettings === "call"){
-            callTotalThree += callCostValue;
-        }else if(billItemTypeWithSettings === "sms"){
-            smsTotalThree += smsCostValue;
+            if (billItemTypeWithSettings === "call"){
+                callTotalThree += callCostValue;
+            }else if(billItemTypeWithSettings === "sms"){
+                smsTotalThree += smsCostValue;
         }
 
     callElement.innerHTML = callTotalThree.toFixed(2);
     smsElement.innerHTML = smsTotalThree.toFixed(2);
-    var totalBillCost = callTotalThree + smsTotalThree;
+    totalBillCost = callTotalThree + smsTotalThree;
     total.innerHTML = totalBillCost.toFixed(2);
-
+    
     // adding color accordingly
     totalColor(totalBillCost);
 }
@@ -62,6 +62,17 @@ function totalColor(totalBillCost){
         total.classList.add("warning");
     }else if(totalBillCost >= criticalLevel){
         total.classList.add("danger");
-        totalBillCost.preventDefault();
+    }
+    
+    // prevent calls from being added when criticalLevel is exceeded
+    if(totalBillCost >= criticalLevel){
+        callTotalThree = undefined;
+        smsTotalThree = undefined;
+        totalBillCost = undefined;
+
+        // preventing undefined from returning NaN after criticalLevel is reached
+        callTotalThree = callTotalThree || 0;
+        smsTotalThree = callTotalThree || 0;
+        totalBillCost = totalBillCost || 0;
     }
 }
