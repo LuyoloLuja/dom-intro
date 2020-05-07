@@ -2,6 +2,7 @@ var callElement = document.querySelector(".callTotalSettings");
 var smsElement = document.querySelector(".smsTotalSettings");
 var callTotalThree = 0;
 var smsTotalThree = 0;
+var totalBillCost = 0;
 
 //  settings variables
 var callCostElement = document.querySelector(".callCostSetting");
@@ -38,12 +39,22 @@ updateButton.addEventListener('click', settingsBill);
 function radioSettings(){
     var checkedBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
 
-        var billItemTypeWithSettings = checkedBtn.value;
-            if (billItemTypeWithSettings === "call"){
-                callTotalThree += callCostValue;
-            }else if(billItemTypeWithSettings === "sms"){
-                smsTotalThree += smsCostValue;
+        if(checkedBtn){
+            var billItemTypeWithSettings = checkedBtn.value;
+            // if (billItemTypeWithSettings === "call"){
+            //     callTotalThree += callCostValue;
+            // }else if(billItemTypeWithSettings === "sms"){
+            //     smsTotalThree += smsCostValue;
+            if(totalBillCost < criticalLevel){
+                if(billItemTypeWithSettings === "call"){
+                    callCostThree += callCostValue;
+                }
+                if(billItemTypeWithSettings === "sms"){
+                    smsTotalThree += smsCostValue;
+                }
+            }
         }
+        
 
     callElement.innerHTML = callTotalThree.toFixed(2);
     smsElement.innerHTML = smsTotalThree.toFixed(2);
@@ -64,22 +75,5 @@ function totalColor(totalBillCost){
         total.classList.add("warning");
     }else if(totalBillCost >= criticalLevel){
         total.classList.add("danger");
-        addButton.removeEventListener("click", radioSettings);
     }
-
-    // if(updateButton.clicked = true){
-    //     addButton.addEventListener('click', radioSettings);
-    // }
-    
-    // prevent calls from being added when criticalLevel is exceeded
-    // if(totalBillCost >= criticalLevel){
-         // callTotalThree = undefined;
-         // smsTotalThree = undefined;
-         // totalBillCost = undefined;
-
-         // // preventing undefined from returning NaN after criticalLevel is reached
-        // callTotalThree = callTotalThree || 0;
-        // smsTotalThree = callTotalThree || 0;
-        // totalBillCost = totalBillCost || 0;
-    // }
 }
