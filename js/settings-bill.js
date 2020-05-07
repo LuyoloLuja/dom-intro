@@ -66,14 +66,14 @@ function totalColor(totalBillCost){
     
     // prevent calls from being added when criticalLevel is exceeded
     if(totalBillCost >= criticalLevel){
-        callTotalThree = undefined;
-        smsTotalThree = undefined;
-        totalBillCost = undefined;
+        // callTotalThree = undefined;
+        // smsTotalThree = undefined;
+        // totalBillCost = undefined;
         addButton.removeEventListener("click", radioSettings);
 
-        // preventing undefined from returning NaN after criticalLevel is reached
-        callTotalThree = callTotalThree || 0;
-        smsTotalThree = callTotalThree || 0;
-        totalBillCost = totalBillCost || 0;
+        // // preventing undefined from returning NaN after criticalLevel is reached
+        // callTotalThree = callTotalThree || 0;
+        // smsTotalThree = callTotalThree || 0;
+        // totalBillCost = totalBillCost || 0;
     }
 }
