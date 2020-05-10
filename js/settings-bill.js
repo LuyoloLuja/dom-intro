@@ -47,7 +47,7 @@ function radioSettings(){
             //     smsTotalThree += smsCostValue;
             if(totalBillCost < criticalLevel){
                 if(billItemTypeWithSettings === "call"){
-                    callCostThree += callCostValue;
+                    callTotalThree += callCostValue;
                 }
                 if(billItemTypeWithSettings === "sms"){
                     smsTotalThree += smsCostValue;
