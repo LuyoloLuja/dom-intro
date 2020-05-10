@@ -41,21 +41,16 @@ function radioSettings(){
 
         if(checkedBtn){
             var billItemTypeWithSettings = checkedBtn.value;
-            // if (billItemTypeWithSettings === "call"){
-            //     callTotalThree += callCostValue;
-            // }else if(billItemTypeWithSettings === "sms"){
-            //     smsTotalThree += smsCostValue;
             if(totalBillCost < criticalLevel){
                 if(billItemTypeWithSettings === "call"){
                     callTotalThree += callCostValue;
                 }
-                if(billItemTypeWithSettings === "sms"){
+                else if(billItemTypeWithSettings === "sms"){
                     smsTotalThree += smsCostValue;
                 }
             }
         }
         
-
     callElement.innerHTML = callTotalThree.toFixed(2);
     smsElement.innerHTML = smsTotalThree.toFixed(2);
     totalBillCost = callTotalThree + smsTotalThree;
