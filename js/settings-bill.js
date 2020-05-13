@@ -73,15 +73,4 @@ function totalColor(totalBillCost){
         total.classList.remove("warning");
         total.classList.add("danger");
      }
-    
-    // if (totalBillCost >= criticalLevel) {
-    //     total.classList.remove("warning");
-    //     total.classList.add("danger");
-    // } else if (totalBillCost >= warningLevel) {
-    //     total.classList.remove("danger");
-    //     total.classList.add("warning");
-    // } else {
-    //     total.classList.remove("danger");
-    //     total.classList.remove("warning");
-   // }
 }
