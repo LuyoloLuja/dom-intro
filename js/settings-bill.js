@@ -31,7 +31,7 @@ function settingsBill(){
     warningLevel = Number(warningSettings.value);
     criticalLevel = Number(criticalSettings.value);
 
-    totalColor();
+    totalColor(totalBillCost);
 }
 updateButton.addEventListener('click', settingsBill);
 
