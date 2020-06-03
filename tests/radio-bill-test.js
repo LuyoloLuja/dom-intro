@@ -1,16 +1,16 @@
 describe('The radio-bill function', function(){
     it('Should be able to add call at 2.75', function(){
-        var itemType = radioBill();
+        var itemType = RadioBill();
         itemType.getCall(2.75);
         assert.equal(2.75, itemType.getCall())
     })
     it('Should be able to add sms 0.75', function(){
-        var itemTypeTwo = radioBill();
+        var itemTypeTwo = RadioBill();
         itemTypeTwo.getSms(0.75);
         assert.equal(0.75, itemTypeTwo.getSms())
     })
     it('Should be able to add both call and sms', function(){
-        var billRadio = radioBill();
+        var billRadio = RadioBill();
 
         billRadio.getCall(2.75);
         billRadio.getSms(0.75);
@@ -19,7 +19,7 @@ describe('The radio-bill function', function(){
         assert.equal(0.75, billRadio.getSms());
     })
     it('Should be able to overall total', function(){
-        var radioBillItem = radioBill();
+        var radioBillItem = RadioBill();
 
         assert.equal(3.50, radioBillItem.getTotal());
     })
