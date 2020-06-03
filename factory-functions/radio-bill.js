@@ -1,7 +1,7 @@
 function RadioBill(){
     var callValue = 2.75;
     var smsValue = 0.75;
-    var totalCost = (callValue + smsValue).toFixed(2)
+    var totalCost = callValue + smsValue;
 
     var warning = 30;
     var critical = 50;

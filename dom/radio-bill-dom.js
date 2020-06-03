@@ -17,7 +17,7 @@ function radioBill(){
     }
     callTotalElement.innerHTML = radioBillInstance.getCall().toFixed(2);
     smsTotalElement.innerHTML = radioBillInstance.getSms().toFixed(2);
-    totalElement.innerHTML = radioBillInstance.getTotal();
+    totalElement.innerHTML = radioBillInstance.getTotal().toFixed(2);
 
     billTotalSpanElement.classList.remove("danger");
     billTotalSpanElement.classList.remove("warning");
