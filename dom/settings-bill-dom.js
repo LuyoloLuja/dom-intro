@@ -30,7 +30,6 @@ function settingsBill(){
 }
 updateButton.addEventListener('click', settingsBill);
 
-//  radio buttons function
 function radioSettings(){
     var checkedBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
 
@@ -48,7 +47,6 @@ function radioSettings(){
     smsElement.innerHTML = settingsBillInstance.getTotalSmsCost().toFixed(2);
     total.innerHTML = settingsBillInstance.getTotalCost().toFixed(2);
     
-    // adding color accordingly
     totalColor();
 }
 addButton.addEventListener('click', radioSettings);

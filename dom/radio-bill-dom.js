@@ -10,18 +10,16 @@ function radioBill(){
     var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
 
     var billItemType = checkedRadioBtn.value;
-    if (billItemType === "call"){
-        radioBillInstance.getCall();
-    }else if(billItemType === "sms"){
-        radioBillInstance.getSms();
-    }
+
+    radioBillInstance.radioButtons(billItemType);
+
     callTotalElement.innerHTML = radioBillInstance.getCall().toFixed(2);
     smsTotalElement.innerHTML = radioBillInstance.getSms().toFixed(2);
     totalElement.innerHTML = radioBillInstance.getTotal().toFixed(2);
 
-    billTotalSpanElement.classList.remove("danger");
+    billTotalSpanElement.classList.remove("critical");
     billTotalSpanElement.classList.remove("warning");
-    
-    totalElement.classList.add(radioBillInstance.totalClassName())
+
+    totalElement.classList.add(settingsBillInstance.totalClassName());
 }
 radioBillButton.addEventListener('click', radioBill);
