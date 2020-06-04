@@ -17,9 +17,9 @@ function radioBill(){
     smsTotalElement.innerHTML = radioBillInstance.getSms().toFixed(2);
     totalElement.innerHTML = radioBillInstance.getTotal().toFixed(2);
 
-    billTotalSpanElement.classList.remove("critical");
-    billTotalSpanElement.classList.remove("warning");
+    totalElement.classList.remove("critical");
+    totalElement.classList.remove("warning");
 
-    totalElement.classList.add(settingsBillInstance.totalClassName());
+    totalElement.classList.add(radioBillInstance.totalClassName());
 }
 radioBillButton.addEventListener('click', radioBill);

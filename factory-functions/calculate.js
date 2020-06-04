@@ -3,7 +3,7 @@ function calculateBill(billElement) {
     var billType = billItems.split(',');
     var call = 0;
     var sms = 0;
-  
+
     for (var i = 0; i < billType.length; i++) {
       var bill = billType[i].trim();
       if (bill === 'call') {

@@ -3,8 +3,8 @@ function RadioBill() {
     var smsCost = 0;
     var totalCost = 0;
 
-    var warning = 30;
-    var critical = 50;
+    const warning = 30;
+    const critical = 50;
 
     function getCall() {
         return callCost;

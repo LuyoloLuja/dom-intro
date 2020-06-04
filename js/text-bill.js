@@ -30,13 +30,13 @@ function textBillTotal(){
     var allTotalCost = callsTotal + smsTotal;
     totalElementOne.innerHTML = allTotalCost.toFixed(2);
 
-    billTotalSpanElement.classList.remove("danger");
+    billTotalSpanElement.classList.remove("critical");
     billTotalSpanElement.classList.remove("warning");
     if (allTotalCost >= 30 && allTotalCost < 50){
         totalElementOne.classList.add("warning");
     }
     else if (allTotalCost >= 50){
-        totalElementOne.classList.add("danger");
+        totalElementOne.classList.add("critical");
     }
 }
 //add an event listener for when the add button is pressed
