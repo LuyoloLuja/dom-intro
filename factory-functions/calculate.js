@@ -3,8 +3,8 @@ function CalculateBill(){
   var sms = 0;
   var overallTotal = 0;
 
-  var warningValue = 0;
-  var criticalValue = 0;
+  var warningValue = 20;
+  var criticalValue = 30;
 
   function returnCall(){
     return call;
@@ -20,10 +20,16 @@ function CalculateBill(){
   }
 
   function billType(bill){
-    if(bill === "call"){
-      call += 2.75;
-    } else if(bill === "sms"){
-      sms += 0.75
+    var billItems = bill.split(",");
+    
+    for(var i = 0; i < billItems.length; i++){
+      var billItem = billItems[i].trim();
+
+      if(billItem === "call"){
+        call += 2.75;
+      } else if(billItem === "sms"){
+        sms += 0.75;
+      }
     }
   }
 

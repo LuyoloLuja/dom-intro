@@ -5,13 +5,6 @@ const billTotalSpanElement = document.querySelector(".total");
 
 var calculateBillInstance = CalculateBill();
 
-function totalPhoneBill(billString){
-    var billItems = billString.split(",");
-    calculateBillInstance.billType(billItems);
-    calculateBillInstance.returnTotal().toFixed(2);
-}
-
-// when the button is clicked
 function calculateBtnClicked(){
     var billString = billStringField.value;
     calculateBillInstance.billType(billString);
