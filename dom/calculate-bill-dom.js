@@ -11,8 +11,8 @@ function calculateBtnClicked(){
     calculateBillInstance.billType(billString);
     billTotalElement.innerHTML = calculateBillInstance.returnTotal().toFixed(2);
 
-    billTotalElement.classList.remove("critical");
-    billTotalElement.classList.remove("warning");
+    billTotalSpanElement.classList.remove("critical");
+    billTotalSpanElement.classList.remove("warning");
     billTotalSpanElement.classList.add(calculateBillInstance.color());
 }
 calculateBtn.addEventListener("click", calculateBtnClicked);
